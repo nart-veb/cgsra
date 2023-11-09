@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="new pb-5">
+        <div class="container">
+          <h1 class="text-success fw-bold fs-4 mb-4">Электронная отчетность</h1>
+          <div class="new__inner py-4">
+            <h2 class="fw-bold fs-4">
+              ЦЕНТРАЛЬНАЯ АНАЛИТИЧЕСКАЯ ПЛАТФОРМА. ГОСКОМСТАТ РЕСПУБЛИКИ
+              АБХАЗИЯ.
+            </h2>
+            <br>
+            <div class="flex-column d-flex gap-4">
+              <p>
+                Автоматизированное рабочее место - http(web) модуль направления
+                бухгалтерской и статистической отчетности в электронном виде.
+                Доступ в АИС "Электронная отчетность" предоставляется в
+                соответствии с договором об информационном обмене, заключаемым с
+                организацией. Организации направляют отчетность в электронном
+                виде в соответствии с требованиями законодательства - Инструкции
+                Министерства финансов Республики Абхазия № 193 от 13-09-2019 г.,
+                договором об осуществлении информационного обмена на передачу
+                бухгалтерской и статистической отчетности в электронном виде,
+                условий и регламента информационного обмена. Направление
+                транспортных файлов электронной отчетности, сформированных в
+                учетных (операционных) автоматизированных системах (типа © ООО
+                "1С". и пр.) организаций осуществляется в соответствии с
+                форматами транспортных сообщений (файлов) и требований по их
+                вормированию.Источник: http://ugsra.org/eo/© Управление
+                государственной статистики Республики Абхазия
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item border-0 mb-4">
+                  <h2 class="accordion-header" id="flush-heading-1">
+                    <button
+                      class="accordion-button collapsed p-4"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapse-1"
+                      aria-expanded="false"
+                      aria-controls="flush-collapse-1"
+                    >
+                      Документы
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapse-1"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-heading-1"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body px-3 py-5">
+                      <a
+                        href="#"
+                        class="text-dark text-decoration-none d-flex gap-3 align-items-start mb-4"
+                      >
+                        <img src="{% static 'img/copy.svg' %}" alt="" />
+                        <span>
+                          Схема увязки строк баланса и приложений к балансу
+                        </span>
+                      </a>
+                      <a
+                        href="#"
+                        class="text-dark text-decoration-none d-flex gap-3 align-items-start mb-4"
+                      >
+                        <img src="{% static 'img/copy.svg' %}" alt="" />
+                        <span>
+                          Договор об информационном обмене
+                        </span>
+                      </a>
+                      <a
+                        href="#"
+                        class="text-dark text-decoration-none d-flex gap-3 align-items-start"
+                      >
+                        <img src="{% static 'img/copy.svg' %}" alt="" />
+                        <span>
+                          Инструкция Министерства финансов Республики Абхазия № 193 от 13-09-2019 г
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item border-0 mb-4">
+                  <h2 class="accordion-header" id="flush-heading-2">
+                    <button
+                      class="accordion-button collapsed p-4"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapse-2"
+                      aria-expanded="false"
+                      aria-controls="flush-collapse-2"
+                    >
+                      Программные средства сдачи отчетности в электронном виде
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapse-2"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-heading-2"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body px-3 py-5">
+                      <a
+                        href="#"
+                        class="text-dark text-decoration-none d-flex gap-3 align-items-start mb-4"
+                      >
+                        <img src="{% static 'img/copy.svg' %}" alt="" />
+                        <span>
+                          Транспортный файл XML
+                        </span>
+                      </a>
+                      <a
+                        href="#"
+                        class="text-dark text-decoration-none d-flex gap-3 align-items-start mb-4"
+                      >
+                        <img src="{% static 'img/copy.svg' %}" alt="" />
+                        <span>
+                          Описание формата XML
+                        </span>
+                      </a>
+                      <a
+                        href="#"
+                        class="text-dark text-decoration-none d-flex gap-3 align-items-start"
+                      >
+                        <img src="{% static 'img/copy.svg' %}" alt="" />
+                        <span>
+                          Приложение к формату обмена (xls)
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+
+        </div>
+</div>
+{% endblock content %}

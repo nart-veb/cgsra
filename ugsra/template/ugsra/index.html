@@ -1,0 +1,511 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+      <div class="new mb-3 pb-4">
+        <div
+          class="container border border-end-0 border-top-0 border-start-0 border-success border-1pt-lg-5 pb-5"
+        >
+          <h1 class="text-success fw-bold fs-4 mb-4">Новости</h1>
+          <div class="new__inner">
+            <div
+              class="managements__inner py-4 gap-5 d-flex flex-column flex-xl-row"
+            >
+              <div
+                class="tab-content col-12 col-xl-6"
+                id="myTab"
+                role="tablist"
+              >
+
+                {% for news in news_list %}
+                <div
+                  class="tab-pane fade {% if forloop.first %} show active {% endif %} position-relative"
+                  id="home{{news.id}}"
+                  role="tabpanel"
+                  aria-labelledby="{% if forloop.first %} home-tab {% else %} home2-tab {% endif %}"
+                >
+                  <div class="tab-content-img">
+                    <img src="{{news.image.url}}" alt="hero" />
+                  </div>
+                  <div class="tab-content-bg position-absolute"></div>
+                  <a href="#" class="tab-content-link">{{news.description |truncatewords:20}}</a>
+                </div>
+                {% endfor %}
+
+              </div>
+
+
+
+              <div class="tab-wrapper px-5 py-4 col-12 col-xl-6">
+                <div class="swiper w-100 h-100 mySwiper">
+                  <div class="nav tab-navs swiper-wrapper" id="myTabContent">
+
+                    {% for news in news_list %}
+                    <div
+                      class="swiper-slide text-success {% if forloop.first %} active {% endif %} "
+                      data-bs-toggle="tab"
+                      data-bs-target="#home{{news.id}}"
+                      aria-selected="false"
+                    >
+                      <span>{{news.id}}</span>
+                      {{news.title}}
+                    </div>
+                    {% endfor %}
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            href="/news/"
+            class="bg-success text-white fs-6 text-decoration-none px-5 py-2 mt-2 d-flex justify-content-center"
+            >смотреть все</a
+          >
+        </div>
+      </div>
+      <div class="new mb-3 pb-4" id="statistics_block">
+        <div
+          class="container border border-end-0 border-top-0 border-start-0 border-success border-1pt-lg-5 pb-5"
+        >
+          <h2 class="text-success fw-bold fs-4 mb-4">Официальная статистика</h2>
+          <div class="new__inner">
+            <div class="staics__inner py-4 gap-3 d-grid">
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Сводные показатели
+                </h4>
+                <img
+                  src="{% static 'img/o1.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Здравоохранение
+                </h4>
+                <img
+                  src="{% static 'img/o2.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Капитальное строительство
+                </h4>
+                <img
+                  src="{% static 'img/o3.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Торговля
+                </h4>
+                <img
+                  src="{% static 'img/o4.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Население
+                </h4>
+                <img
+                  src="{% static 'img/o5.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Транспорт Связь
+                </h4>
+                <img
+                  src="{% static 'img/o6.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Промышленность
+                </h4>
+                <img
+                  src="{% static 'img/o7.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Предприятия и организации
+                </h4>
+                <img
+                  src="{% static 'img/o8.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Рынок труда
+                </h4>
+                <img
+                  src="{% static 'img/o9.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Финансы
+                </h4>
+                <img
+                  src="{% static 'img/o10.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Лесное хозяйство
+                </h4>
+                <img
+                  src="{% static 'img/o11.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Внешнеэкономическая деятельность
+                </h4>
+                <img
+                  src="{% static 'img/o12.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Образование
+                </h4>
+                <img
+                  src="{% static 'img/o13.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Индекс цен и тарифов
+                </h4>
+                <img
+                  src="{% static 'img/o14.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Уровень жизни населения
+                </h4>
+                <img
+                  src="{% static 'img/o15.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Культура, туризм, отдых и спорт
+                </h4>
+                <img
+                  src="{% static 'img/o16.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+              <a href="#" class="position-relative">
+                <h4
+                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
+                >
+                  Валовой внутренний продукт
+                </h4>
+                <img
+                  src="{% static 'img/o17.jpg' %}"
+                  alt=""
+                  class="statics__img img-fluid cover-img w-100"
+                />
+              </a>
+            </div>
+
+            <div class="values mt-5 d-flex pb-5 flex-wrap">
+              <div class="col-12 col-xl-3 ps-5 d-flex flex-column">
+                <h3 class="fs-1 text-success fw-bold">
+                  Валовый внутренний продукт
+                </h3>
+                <span class="text-success fs-3 fst-italic mb-5 d-flex">
+                  (млн руб.)</span
+                >
+                <div class="pt-4 fst-italic d-flex flex-column value-all">
+                  <div class="mb-3">
+                    2011 <span class="value-line"></span>
+                    <span class="fst-normal fw-bold">21,988 1</span> млн.руб
+                  </div>
+                  <div class="mb-3">
+                    2012 <span class="value-line"></span>
+                    <span class="fst-normal fw-bold">25,097 7</span> млн.руб
+                  </div>
+
+                  <div class="mb-3">
+                    2013 <span class="value-line"></span>
+                    <span class="fst-normal fw-bold">24,800 1</span> млн.руб
+                  </div>
+                  <div class="mb-3">
+                    2014 <span class="value-line"></span>
+                    <span class="fst-normal fw-bold"> 27,552 3</span> млн.руб
+                  </div>
+                  <div class="mb-3">
+                    2015 <span class="value-line"></span>
+                    <span class="fst-normal fw-bold"> 28,569 2</span> млн.руб
+                  </div>
+                  <div class="mb-3">
+                    2016 <span class="value-line"></span>
+                    <span class="fst-normal fw-bold"> 30,292 2 </span> млн.руб
+                  </div>
+                  <div class="mb-3">
+                    2017 <span class="value-line"></span>
+                    <span class="fst-normal fw-bold"> 30,397 1</span> млн.руб
+                  </div>
+                  <div class="mb-3">
+                    2018 <span class="value-line"></span>
+                    <span class="fst-normal fw-bold"> 31,872</span> млн.руб
+                  </div>
+                  <div class="mb-3">
+                    2019 <span class="value-line"></span>
+                    <span class="fst-normal fw-bold"> 34,833 1</span> млн.руб
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-xl-9 d-flex justify-content-start justify-content-md-center justify-content-lg-end mt-5 mt-lg-0 val__img p-5"
+              >
+                <div class="position-relative">
+                  <img src="{% static 'img/valuesvg.svg' %}" alt="" />
+                  <div class="position-absolute v1">
+                    <div class="value__price position-absolute">
+                      <div
+                        class="position-relative d-flex flex-column value__price-inner align-items-center"
+                      >
+                        <span class="fw-bold text-white"> 34,833 1</span>
+                        <span class="fst-italic text-white"> млн.руб</span>
+                      </div>
+                    </div>
+                    <span class="fw-bold fs-3 position-absolute value__year">
+                      2019</span
+                    >
+                    <img src="{% static 'img/v1.svg' %}" alt="" />
+                  </div>
+                  <div class="position-absolute v2">
+                    <div class="value__price position-absolute">
+                      <div
+                        class="position-relative d-flex flex-column value__price-inner align-items-center"
+                      >
+                        <span class="fw-bold text-white"> 31,872</span>
+                        <span class="fst-italic text-white"> млн.руб</span>
+                      </div>
+                    </div>
+                    <span class="fw-bold fs-3 position-absolute value__year">
+                      2018</span
+                    >
+                    <img src="{% static 'img/v2.svg' %}" alt="" />
+                  </div>
+                  <div class="position-absolute v3">
+                    <div class="value__price position-absolute">
+                      <div
+                        class="position-relative d-flex flex-column value__price-inner align-items-center"
+                      >
+                        <span class="fw-bold text-white"> 30,397 1</span>
+                        <span class="fst-italic text-white"> млн.руб</span>
+                      </div>
+                    </div>
+                    <span class="fw-bold fs-3 position-absolute value__year">
+                      2017</span
+                    >
+                    <img src="{% static 'img/v3.svg' %}" alt="" />
+                  </div>
+                  <div class="position-absolute v4">
+                    <div class="value__price position-absolute">
+                      <div
+                        class="position-relative d-flex flex-column value__price-inner align-items-center"
+                      >
+                        <span class="fw-bold text-white"> 30,292 2</span>
+                        <span class="fst-italic text-white"> млн.руб</span>
+                      </div>
+                    </div>
+                    <span class="fw-bold fs-3 position-absolute value__year">
+                      2016</span
+                    >
+                    <img src="{% static 'img/v4.svg' %}" alt="" />
+                  </div>
+                  <div class="position-absolute v5">
+                    <div class="value__price position-absolute">
+                      <div
+                        class="position-relative d-flex flex-column value__price-inner align-items-center"
+                      >
+                        <span class="fw-bold text-white"> 28,569 2</span>
+                        <span class="fst-italic text-white"> млн.руб</span>
+                      </div>
+                    </div>
+                    <span class="fw-bold fs-3 position-absolute value__year">
+                      2015</span
+                    >
+                    <img src="{% static 'img/v5.svg' %}" alt="" />
+                  </div>
+                  <div class="position-absolute v6">
+                    <div class="value__price position-absolute">
+                      <div
+                        class="position-relative d-flex flex-column value__price-inner align-items-center"
+                      >
+                        <span class="fw-bold text-white"> 27,552 3</span>
+                        <span class="fst-italic text-white"> млн.руб</span>
+                      </div>
+                    </div>
+                    <span class="fw-bold fs-3 position-absolute value__year">
+                      2014</span
+                    >
+                    <img src="{% static 'img/v6.svg' %}" alt="" />
+                  </div>
+                  <div class="position-absolute v7">
+                    <div class="value__price position-absolute">
+                      <div
+                        class="position-relative d-flex flex-column value__price-inner align-items-center"
+                      >
+                        <span class="fw-bold text-white"> 24,800 1</span>
+                        <span class="fst-italic text-white"> млн.руб</span>
+                      </div>
+                    </div>
+                    <span class="fw-bold fs-3 position-absolute value__year">
+                      2013</span
+                    >
+                    <img src="{% static 'img/v7.svg' %}" alt="" />
+                  </div>
+                  <div class="position-absolute v8">
+                    <div class="value__price position-absolute">
+                      <div
+                        class="position-relative d-flex flex-column value__price-inner align-items-center"
+                      >
+                        <span class="fw-bold text-white"> 25,097 7</span>
+                        <span class="fst-italic text-white"> млн.руб</span>
+                      </div>
+                    </div>
+                    <span class="fw-bold fs-3 position-absolute value__year">
+                      2012</span
+                    >
+                    <img src="{% static 'img/v8.svg' %}" alt="" />
+                  </div>
+                  <div class="position-absolute v9">
+                    <div class="value__price position-absolute">
+                      <div
+                        class="position-relative d-flex flex-column value__price-inner align-items-center"
+                      >
+                        <span class="fw-bold text-white"> 21,988 1</span>
+                        <span class="fst-italic text-white"> млн.руб</span>
+                      </div>
+                    </div>
+                    <span class="fw-bold fs-3 position-absolute value__year">
+                      2011</span
+                    >
+                    <img src="{% static 'img/v9.svg' %}" alt="" />
+                  </div>
+                </div>
+                <!-- <div class=""></div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="new pb-5">
+        <div class="container pb-5">
+          <h2 class="text-success fw-bold fs-4 mb-4">
+            Об индексах потребительских цен
+          </h2>
+          <div class="new__inner">
+            <div class="managements__inner py-4 gap-3 d-flex flex-column">
+              <div class="flex-column d-flex gap-4 mt-3 mt-lg-0 mb-auto">
+                <p>
+                  Сводный индекс потребительских цен и тарифов на товары и
+                  платные услуги населению с начала 2022 года составил 110,5 %,
+                  в том числе на продовольственные товары – 111,0%,
+                  непродовольственные товары – 111,4%, платные услуги населению
+                  – 110,2%.
+                </p>
+                <p>
+                  Индекс цен за январь-апрель 2022г. на продовольственные и
+                  непродовольственные товары 111,9%. Индекс потребительских цен
+                  и тарифов на товары и платные услуги населению за май 2022г. к
+                  маю 2021г. составил – 118,3%, в том числе на продовольственные
+                  товары – 117,6%, непродовольственные товары – 123,2%, платные
+                  услуги населению – 117,1%.
+                </p>
+                <p>
+                  Стоимость прожиточного минимума на одного трудоспособного
+                  жителя на 1-ое июня 2022г. составила – 9343,4 руб., в том
+                  числе продовольственные товары – 6390,9 руб.,
+                  непродовольственные товары – 1831,3 руб., платные услуги,
+                  налоги и обязательные платежи – 1121,2руб. Величина
+                  прожиточного минимума по сравнению с соответствующим периодом
+                  прошлого года увеличилась на 22,3 %.
+                </p>
+              </div>
+            </div>
+          </div>
+          <a
+            href="#"
+            class="bg-success text-white fs-6 text-decoration-none px-5 py-2 mt-4 d-flex justify-content-center"
+            >смотреть все</a
+          >
+        </div>
+      </div>
+
+{% endblock content %}

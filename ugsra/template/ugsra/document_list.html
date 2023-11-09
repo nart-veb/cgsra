@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="new mb-5 pb-3">
+        <div class="container">
+          <h1 class="text-success fw-bold fs-4 mb-4">{{title}}</h1>
+          <div class="new__inner py-4">
+            <div class="management__inner py-3">
+              <div
+                class="accordion fs-6 accordion-flush"
+                id="accordionFlushExample"
+              >
+
+
+
+
+
+
+
+
+              {% for chapter in chapter_list %}
+                <div class="accordion-item border-0 mb-4">
+                  <h2 class="accordion-header" id="flush-heading-{{chapter.id}}">
+                    <button
+                      class="accordion-button collapsed p-4"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapse-{{chapter.id}}"
+                      aria-expanded="false"
+                      aria-controls="flush-collapse-{{chapter.id}}"
+                    >
+                      {{chapter.title}}
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapse-{{chapter.id}}"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-heading-{{chapter.id}}"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body px-3 py-4">
+
+
+                      {% for file in file_list %}
+                      {% if file.statistic.title == chapter.title %}
+                      <a
+                        href="#"
+                        class="text-dark text-decoration-none d-flex gap-3 align-items-start mb-4"
+                      >
+                        <img src="{% static 'img/copy.svg' %}" alt="" />
+                        <span
+                          >{{file.title}}</span
+                        >
+                      </a>
+                      {% endif %}
+                      {% endfor %}
+
+
+
+
+
+
+
+
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+
+
+
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+{% endblock content %}

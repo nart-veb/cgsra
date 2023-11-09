@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="management mb-5 pb-5">
+        <div class="container">
+          <h1 class="text-success fw-bold fs-4 mb-4">Руководство</h1>
+          <div class="management__inner py-4">
+            <div class="row">
+              <div class="col-lg-6 col-12">
+                <div class="w-100 h-100 d-flex">
+                  <img
+                    src="{{management.people.image.url}}"
+                    alt=""
+                    class="management__img img-fluid cover-img w-100"
+                  />
+                </div>
+              </div>
+              <div class="col-lg-6 col-12">
+                <h2 class="fs-5 fw-bold mt-3 mt-lg-0 px-3 px-lg-4">
+                   {{management.people.name}}
+                </h2>
+                <div
+                  class="mt-2 d-flex flex-column flex-lg-row justify-content-lg-between px-3 px-lg-4 gap-3 pb-4"
+                >
+                  <span class="fst-italic">{{management.people.job_title}}</span>
+                </div>
+                <div
+                  class="fst-italic px-3 px-lg-4 mt-4 flex-column d-flex gap-4"
+                >
+                    {{management.description}}
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            href="../"
+            class="bg-success text-white fs-6 text-decoration-none px-5 py-2 mt-4 d-inline-flex"
+            >Назад к списку</a
+          >
+        </div>
+      </div>
+
+{% endblock content %}

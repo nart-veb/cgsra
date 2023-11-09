@@ -1,0 +1,244 @@
+{% load static %}
+{% load static numbers_tag %}
+{% load active_link_tags %}
+
+<header class="mb-4 pb-3">
+        <div class="mt-lg-3">
+          <div
+            class="container border border-end-0 border-top-0 border-start-0 border-success border-1 pt-lg-5 pb-lg-4 pb-3 pt-3"
+          >
+            <div class="mb-3 px-lg-2">
+              <div class="d-flex px-1 align-items-end justify-content-between">
+                <a class="logo" href="/"
+                  ><img src="{% static 'img/logo.svg' %}" alt=""
+                /></a>
+                <div class="header__actions align-items-center d-flex">
+                  <a
+                    class="text-decoration-none text-white bg-success p-2 fw-bold d-none d-lg-flex"
+                    href="#"
+                    >РУС</a
+                  >
+                  <a
+                    class="text-decoration-none text-muted p-2 d-none d-lg-flex"
+                    href="#"
+                    >АБХ</a
+                  >
+                  <div
+                    class="search me-4 ms-3 position-relative z-index-1 d-none d-lg-flex"
+                  >
+                    <form
+                      class="d-flex position-absolute z-index-1 form-search overflow-hidden"
+                    >
+                      <div class="d-flex w-100 form-search-inner">
+                        <input
+                          class="form-control my-control search-input"
+                          type="search"
+                          placeholder="искать"
+                          aria-label="Search"
+                        />
+                        <button
+                          class="btn btn-outline-success search-btn"
+                          type="submit"
+                          style="margin-left:10px;"
+                        >
+                          Найти
+                        </button>
+                      </div>
+                    </form>
+                    <a href="#" class="form-btn d-flex"> </a>
+                  </div>
+                  <div
+                    class="burger-btn d-flex"
+                    data-bs-toggle="offcanvas"
+                    href="#offcanvasExample"
+                    role="button"
+                    aria-controls="offcanvasExample"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div
+        class="offcanvas offcanvas-start burger"
+        tabindex="-1"
+        id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel"
+      >
+        <div class="offcanvas-header">
+          <div class="burger__top d-flex w-100 justify-content-center">
+            <img src="{% static 'img/logo-burger.svg' %}" alt="" />
+          </div>
+        </div>
+        <div class="offcanvas-body ps-0">
+          <div class="burger__center">
+            <div
+              class="burger__actions d-flex align-items-center d-lg-none mb-3"
+            >
+              <a
+                class="text-decoration-none text-white bg-success p-2 fw-bold d-flex"
+                href="#"
+                >РУС</a
+              >
+              <a class="text-decoration-none text-muted p-2 d-flex" href="#"
+                >АБХ</a
+              >
+
+              <a
+                class="btn-burger ms-auto"
+                data-bs-toggle="collapse"
+                href="#collapseSearch"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseSearch"
+              >
+              </a>
+            </div>
+            <div class="collapse d-lg-none" id="collapseSearch">
+              <form class="d-flex">
+                <div class="d-flex w-100 form-search-inner">
+                  <input
+                    class="form-control my-control"
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                  />
+                  <button class="btn btn-outline-success" type="submit">
+                    Search
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <nav class="burger__nav py-2">
+            <ul class="nav d-flex flex-column">
+
+              <li class="nav-item">
+                <a class="nav-link p-3 {% if '/' == request.path %} active {% endif %}" href="{% url 'home' %}">Главная</a>
+              </li>
+
+              <li class="nav-item p-0">
+                <div
+                  class="nav-link p-0"
+                  aria-current="page"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseExample_2"
+                  aria-expanded="false"
+                  aria-controls="collapseExample_2"
+                >
+                  <div
+                    class="d-flex align-items-center justify-content-between p-3 pe-0
+                    {% active_link 'management-list' %}
+                    {% active_link 'department-list' %}
+                    {% active_link 'department-area-list' %}"
+                  >
+                    <span>Структура</span>
+                    <img class="arr" src="{% static 'img/arr-down.svg' %}" alt="" />
+                  </div>
+                </div>
+                <div class="collapse" id="collapseExample_2">
+                  <ul class="ps-4">
+                    <li class="nav-item">
+                      <a
+                              class="nav-link p-0 py-3 {% active_link 'management-list' %}"
+                              href="{% url 'management-list' %}"
+                      >
+                        Руководство
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link p-0 py-3 {% active_link 'department-list' %}" href="{% url 'department-list' %}">Подразделения аппарата</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link p-0 py-3 {% active_link 'department-area-list' %}" href="{% url 'department-area-list' %}">Районные отделы</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link p-3 {% active_link 'news-list' %}" href="{% url 'news-list' %}">Новости</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-3 {% active_link 'statistics-area-list' %}" href="{% url 'statistics-area-list' %}">Официальная статистика</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-3 {% active_link 'document-area-list' %}" href="{% url 'document-area-list' %}">Документы</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-3 {% active_link 'reporting-list' %}" href="{% url 'reporting-list' %}">Отчетность</a>
+              </li>
+
+              <li class="nav-item p-0">
+                <div
+                  class="nav-link p-0"
+                  aria-current="page"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseExample_3"
+                  aria-expanded="false"
+                  aria-controls="collapseExample_3"
+                >
+                  <div
+                    class="d-flex align-items-center justify-content-between p-3 pe-0"
+                  >
+                    <span>Абхазия в цифрах</span>
+                    <img class="arr" src="{% static 'img/arr-down.svg' %}" alt="" />
+                  </div>
+                </div>
+                <div class="collapse" id="collapseExample_3">
+                  <ul class="ps-4">
+                    {% get_numbers as numbers %}
+                      {% for number in numbers %}
+                    <li class="nav-item">
+                      <a class="nav-link p-0 py-3" href="{{number.file.url}}">{{number.title}}</a>
+                    </li>
+                      {% endfor %}
+                  </ul>
+                </div>
+              </li>
+
+              <li class="nav-item p-0">
+                <div
+                  class="nav-link p-0"
+                  aria-current="page"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseExample_4"
+                  aria-expanded="false"
+                  aria-controls="collapseExample_4"
+                >
+                  <div
+                    class="d-flex align-items-center justify-content-between p-3 pe-0
+                    {% active_link 'video-list' %}
+                    {% active_link 'photo-list' %}
+                    "
+                  >
+                    <span>Медиа</span>
+                    <img class="arr" src="{% static 'img/arr-down.svg' %}" alt="" />
+                  </div>
+                </div>
+                <div class="collapse" id="collapseExample_4">
+                  <ul class="ps-4">
+                    <li class="nav-item">
+                      <a class="nav-link p-0 py-3 {% active_link 'photo-list' %}" href="{% url 'photo-list' %}">Фото</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link p-0 py-3 {% active_link 'video-list' %}" href="{% url 'video-list' %}">Видео</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-3 {% active_link 'reporting' %}" href="{% url 'reporting' %}">Электронная отчетность</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link p-3" href="#">
+                  Контакты
+                </a>
+              </li>
+
+            </ul>
+          </nav>
+        </div>
+      </div>

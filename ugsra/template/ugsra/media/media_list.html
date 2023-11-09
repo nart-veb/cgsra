@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="managements mb-5 pb-3">
+        <div class="container">
+          <h1 class="text-success fw-bold fs-4 mb-4">{{title}}</h1>
+          <div class="managements__inner">
+            <div class="row">
+
+
+              {% for media in publication_list %}
+              <div class="managements__item col-12 col-md-4 h-25 mb-4 mt-3">
+                <div class="managements__item-inner pb-3 position-relative">
+                  <div class="managements__item-date position-absolute">
+                    {{media.date}}
+                  </div>
+                  <div class="w-100 h-100 bg-dark d-flex">
+                    <img
+                      src="{{media.image.url}}"
+                      alt=""
+                      class="managements__img img-fluid cover-img w-100"
+                    />
+                  </div>
+
+                  <div class="pt-3 pb-4 px-3 px-lg-4">
+                    <a href="{{media.id}}/" class="item_a">{{media.title}}</a>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock content %}

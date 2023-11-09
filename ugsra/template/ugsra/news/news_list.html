@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="new pb-5">
+        <div class="container">
+          <h1 class="text-success fw-bold fs-4 mb-4">Новости</h1>
+          <div class="new__inner py-4">
+            <div class="managements__inner py-4 gap-3 d-flex flex-column">
+
+
+
+              {% for news in news_list %}
+              <div class="managements__item d-flex w-100 mb-4 mt-3 flex-wrap">
+                <div
+                  class="d-flex col-lg-6 col-12 position-relative p-0 pe-lg-5"
+                >
+                  <img
+                    src="{{news.image.url}}"
+                    alt=""
+                    class="news__img img-fluid cover-img w-100"
+                  />
+                  <div class="managements__item-date position-absolute">
+                    {{news.date}}
+                  </div>
+                </div>
+                <div class="pt-3 pt-lg-0 col-lg-6 col-12 d-flex flex-column">
+                  <h2 class="fs-5 fw-bold mt-3 mt-lg-0 mb-4">
+                    {{news.title}}
+                  </h2>
+                  <div
+                    class="fst-italic flex-column d-flex gap-4 mt-3 mt-lg-0 mb-auto"
+                  >
+                    <p>
+                      {{news.description |truncatewords:30|safe}}
+                    </p>
+                  </div>
+                  <a
+                    href="{{news.id}}/"
+                    class="bg-success text-white fs-6 text-decoration-none px-5 py-2 mt-4 d-inline-flex justify-content-center"
+                    >читать полностью
+                  </a>
+                </div>
+              </div>
+                {% endfor %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% endblock content %}

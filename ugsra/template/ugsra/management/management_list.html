@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="managements mb-5 pb-5">
+        <div class="container">
+          <h1 class="text-success fw-bold fs-4 mb-4">Руководство</h1>
+          <div class="managements__inner">
+            <div class="row">
+
+              {% for item in management_list %}
+              <div class="managements__item col-12 col-md-4 h-25 mb-4 mt-3">
+                <div class="managements__item-inner">
+                  <div class="w-100 h-100 bg-dark d-flex">
+                    <img
+                      src="{{item.people.image.url}}"
+                      alt=""
+                      class="managements__img img-fluid cover-img w-100"
+                    />
+                  </div>
+
+                  <h2 class="fs-5 fw-bold mt-3 px-3 px-lg-4">
+                    <a href="{{item.id}}/">{{item.people.name}}</a>
+                  </h2>
+                  <div
+                    class="mt-2 d-flex flex-column flex-lg-row justify-content-lg-between px-3 px-lg-4 gap-3 pb-4"
+                  >
+                    <span class="fst-italic">{{item.people.job_title}}</span>
+                  </div>
+                </div>
+              </div>
+
+              {% endfor %}
+
+
+
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+{% endblock content %}
