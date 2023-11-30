@@ -9,8 +9,10 @@ class IndexView(View):
     # главная страница
     def get(self, request):
         news = list(chain(News.objects.order_by('date')[:6], News.objects.order_by('date')[:3]))
+        statistics = Statistics.objects.filter(status_pay=True)
         context = {
             "news_list": news,
+            "statistics_list": statistics,
         }
         return render(request, 'ugsra/index.html', context)
 
@@ -82,17 +84,19 @@ class ListDepartmentArea(View):
         return render(request, 'ugsra/department_list.html', context)
 
 
-class ListStatistics(View):
+class ListStatistics(ListView):
+    template_name = 'ugsra/statistics/statistics_list.html'
+    context_object_name = 'item_list'
 
-    def get(self, request):
-        statistic_chapter = ChapterStatistics.objects.order_by("sorting")
-        statistic_file = StatisticsFile.objects.all()
-        context = {
-            "chapter_list": statistic_chapter,
-            "file_list": statistic_file,
-            "title": "Официальная статистика",
-        }
-        return render(request, 'ugsra/document_list.html', context)
+    def get_queryset(self):
+        return Statistics.objects.order_by("-date")
+
+
+class DetailStatistics(DetailView):
+    model = Statistics
+    template_name = 'ugsra/statistics/statistics_detail.html'
+    context_object_name = 'item'
+    pk_url_kwarg = 'statistics_id'
 
 
 class ListDocuments(View):

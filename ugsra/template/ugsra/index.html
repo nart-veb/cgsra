@@ -30,7 +30,7 @@
                     <img src="{{news.image.url}}" alt="hero" />
                   </div>
                   <div class="tab-content-bg position-absolute"></div>
-                  <a href="#" class="tab-content-link">{{news.description |truncatewords:20}}</a>
+                  <a href="/news/{{news.id}}" class="tab-content-link">{{news.description |truncatewords:20|safe }}</a>
                 </div>
                 {% endfor %}
 
@@ -73,210 +73,23 @@
           <h2 class="text-success fw-bold fs-4 mb-4">Официальная статистика</h2>
           <div class="new__inner">
             <div class="staics__inner py-4 gap-3 d-grid">
-              <a href="#" class="position-relative">
+              
+              {% for item in statistics_list %}
+              <a href="/statistics/{{item.id}}" class="position-relative">
                 <h4
                   class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
                 >
-                  Сводные показатели
+                  {{item.title}}
                 </h4>
                 <img
-                  src="{% static 'img/o1.jpg' %}"
+                  src="{{item.image.url}}"
                   alt=""
                   class="statics__img img-fluid cover-img w-100"
                 />
               </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Здравоохранение
-                </h4>
-                <img
-                  src="{% static 'img/o2.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Капитальное строительство
-                </h4>
-                <img
-                  src="{% static 'img/o3.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Торговля
-                </h4>
-                <img
-                  src="{% static 'img/o4.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Население
-                </h4>
-                <img
-                  src="{% static 'img/o5.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Транспорт Связь
-                </h4>
-                <img
-                  src="{% static 'img/o6.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Промышленность
-                </h4>
-                <img
-                  src="{% static 'img/o7.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Предприятия и организации
-                </h4>
-                <img
-                  src="{% static 'img/o8.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Рынок труда
-                </h4>
-                <img
-                  src="{% static 'img/o9.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Финансы
-                </h4>
-                <img
-                  src="{% static 'img/o10.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Лесное хозяйство
-                </h4>
-                <img
-                  src="{% static 'img/o11.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Внешнеэкономическая деятельность
-                </h4>
-                <img
-                  src="{% static 'img/o12.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Образование
-                </h4>
-                <img
-                  src="{% static 'img/o13.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Индекс цен и тарифов
-                </h4>
-                <img
-                  src="{% static 'img/o14.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Уровень жизни населения
-                </h4>
-                <img
-                  src="{% static 'img/o15.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Культура, туризм, отдых и спорт
-                </h4>
-                <img
-                  src="{% static 'img/o16.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
-              <a href="#" class="position-relative">
-                <h4
-                  class="statics__title position-absolute fw-bold text-white ps-4 pt-2"
-                >
-                  Валовой внутренний продукт
-                </h4>
-                <img
-                  src="{% static 'img/o17.jpg' %}"
-                  alt=""
-                  class="statics__img img-fluid cover-img w-100"
-                />
-              </a>
+              {% endfor %}
+
+
             </div>
 
             <div class="values mt-5 d-flex pb-5 flex-wrap">

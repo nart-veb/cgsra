@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="statistics pb-5">
+        <div class="container">
+          <h1 class="text-success fw-bold fs-4 mb-4">Официальная статистика</h1>
+          <div class="new__inner py-4">
+            <div class="managements__inner py-4 gap-3 d-flex flex-column">
+
+
+{% for item in item_list %}
+<a
+                        href="{{item.id}}/"
+                        class="text-dark text-decoration-none d-flex gap-3 align-items-start mb-4"
+                      >
+                        <img src="{% static 'img/copy.svg' %}" alt="" />
+                        <span
+                          >{{item.year}} — {{item.title}}</span
+                        >
+                      </a>
+                <hr>
+{% endfor %}
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% endblock content %}

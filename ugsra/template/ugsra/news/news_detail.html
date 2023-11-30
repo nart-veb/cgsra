@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="new pb-5">
+<div class="new news-detail pb-5">
         <div class="container">
           <h1 class="text-success fw-bold fs-4 mb-4">Новости</h1>
           <div class="new__inner py-4">
@@ -13,22 +13,26 @@
             </h2>
             <div class="date fst-italic mt-4 mb-5"> {{ news.date }}</div>
             <div class="row mb-5">
-              <div class="col-12 col-lg-6">
-                <div class="w-100 h-100 d-flex">
-                  <img
+<!--              <div class="col-12 col-lg-6">-->
+<!--                <div class="w-100 h-100 d-flex">-->
+<!--                  <img-->
+<!--                    src="{{ news.image.url }}"-->
+<!--                    alt=""-->
+<!--                    class="new__img img-fluid cover-img w-100"-->
+<!--                  />-->
+<!--                </div>-->
+<!--              </div>-->
+              <div class="col-12 col-lg-12">
+                <div
+                  class="fst-italic gap-4 mt-3 mt-lg-0"
+                >
+
+                    <img
                     src="{{ news.image.url }}"
                     alt=""
-                    class="new__img img-fluid cover-img w-100"
-                  />
-                </div>
-              </div>
-              <div class="col-12 col-md-6">
-                <div
-                  class="fst-italic px-3 px-lg-4 flex-column d-flex gap-4 mt-3 mt-lg-0"
-                >
-                  <p>
-                    {{ news.description|safe }}
-                  </p>
+                    class="new__img img-fluid cover-img"
+                  /> {{ news.description|safe }}
+
                 </div>
               </div>
             </div>

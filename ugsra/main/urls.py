@@ -13,6 +13,7 @@ urlpatterns = [
     path("structure/department/", views.ListDepartment.as_view(), name='department-list'),
     path("structure/department-area/", views.ListDepartmentArea.as_view(), name='department-area-list'),
     path("statistics/", views.ListStatistics.as_view(), name='statistics-area-list'),
+    path("statistics/<int:statistics_id>/", views.DetailStatistics.as_view(), name='statistics-detail'),
     path("document/", views.ListDocuments.as_view(), name='document-area-list'),
     path("reporting/", views.ListReporting.as_view(), name='reporting-list'),
     path("media/video/", views.ListVideo.as_view(), name='video-list'),

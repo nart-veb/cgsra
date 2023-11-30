@@ -113,33 +113,21 @@ class AbkhaziaNumber(models.Model):
         verbose_name_plural = "Абхазия в цифрах"
 
 
-class ChapterStatistics(models.Model):
-    """Сфера статистики"""
-    title = models.CharField("Название", max_length=50)
-    sorting = models.IntegerField("Сортировка")
+class Statistics(models.Model):
+    """Официальная статистика"""
+    title = models.CharField("Заголовок", max_length=50)
+    year = models.IntegerField("Год", max_length=50)
+    image = models.ImageField("Картинка", upload_to="images/")
+    status_pay = models.BooleanField(verbose_name="Расположить на главную", default=False)
+    description = models.TextField("Описание", blank=True)
+    date = models.DateTimeField("Дата")
 
     def __str__(self):
         return self.title
 
     class Meta:
         verbose_name = "раздел"
-        verbose_name_plural = "Официальная статистика (разделы)"
-
-
-class StatisticsFile(models.Model):
-    """Файл статистики"""
-    statistic = models.ForeignKey(ChapterStatistics, on_delete=models.CASCADE)
-    title = models.CharField("Наименование", max_length=50)
-    file = models.FileField("Файл", upload_to="files/statistics")
-
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name = "документ"
-        verbose_name_plural = "Официальная статистика (документы)"
-
+        verbose_name_plural = "Официальная статистика"
 
 class ChapterDocument(models.Model):
     """Раздел документов"""
