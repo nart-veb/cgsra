@@ -503,3 +503,8 @@ top: 70px;
      width:100%;
 }
 }
+.new .nav-electronic a{
+padding:0px 15px;
+text-decoration:none;
+color:#0C5504;
+}

@@ -115,9 +115,9 @@ class AbkhaziaNumber(models.Model):
 
 class Statistics(models.Model):
     """Официальная статистика"""
-    title = models.CharField("Заголовок", max_length=50)
-    year = models.IntegerField("Год", max_length=50)
-    image = models.ImageField("Картинка", upload_to="images/")
+    title = models.CharField("Заголовок", max_length=250)
+    year = models.IntegerField("Год")
+    image = models.ImageField("Картинка", upload_to="images/", blank=True,)
     status_pay = models.BooleanField(verbose_name="Расположить на главную", default=False)
     description = models.TextField("Описание", blank=True)
     date = models.DateTimeField("Дата")

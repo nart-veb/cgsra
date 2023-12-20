@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<form type="f_bal_v_1" date="01.02.2022" reportdate="05.02.2022" submissiondate = "15.02.2022">
+<block orginfo="organization">
+<row>
+<cell collumn="orgname"></cell>
+<cell collumn="orginn"></cell>
+<cell collumn="orgokpo"></cell>
+<cell collumn="orgskato"></cell>
+<cell collumn="orgfirstperson"></cell>
+<cell collumn="orgsecondperson"></cell>
+<cell collumn="orgthirdperson"></cell>
+<cell collumn="orgphone"></cell>
+<cell collumn="orgaddress"></cell>
+</row>
+</block>
+<block table="ap_f_b_rows">
+<row>
+<cell collumn="data_key"></cell>
+<cell collumn="str1"></cell>
+<cell collumn="str2"></cell>
+<cell collumn="str3"></cell>
+<cell collumn="str4"></cell>
+<cell collumn="str5"></cell>
+<cell collumn="str6"></cell>
+<cell collumn="str7"></cell>
+<cell collumn="str8"></cell>
+<cell collumn="str9"></cell>
+<cell collumn="str10"></cell>
+<cell collumn="str11"></cell>
+<cell collumn="str12"></cell>
+<cell collumn="str13"></cell>
+<cell collumn="str14"></cell>
+<cell collumn="str15"></cell>
+<cell collumn="str16"></cell>
+<cell collumn="str17"></cell>
+<cell collumn="str18"></cell>
+<cell collumn="str19"></cell>
+<cell collumn="str20"></cell>
+</row>
+</block>
+</form>

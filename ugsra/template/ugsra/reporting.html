@@ -12,7 +12,12 @@
               АБХАЗИЯ.
             </h2>
             <br>
+            <div class="nav-electronic">
+              |<a href="https://poseidon.cgsra.org/poseidon/login.xhtml">Личный кабинет</a>|
+              </div>
+            <br>
             <div class="flex-column d-flex gap-4">
+
               <p>
                 Автоматизированное рабочее место - http(web) модуль направления
                 бухгалтерской и статистической отчетности в электронном виде.
@@ -33,6 +38,39 @@
               </p>
             </div>
           </div>
+
+
+
+
+
+
+          <div class="accordion-item border-0 mb-4">
+                  <h2 class="accordion-header" id="flush-heading-3">
+                    <button
+                      class="accordion-button collapsed p-4"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapse-3"
+                      aria-expanded="false"
+                      aria-controls="flush-collapse-3"
+                    >
+                      Формы
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapse-3"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-heading-3"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body px-3 py-5">
+
+                    </div>
+                  </div>
+                </div>
+
+
+
           <div class="accordion-item border-0 mb-4">
                   <h2 class="accordion-header" id="flush-heading-1">
                     <button
@@ -53,36 +91,65 @@
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div class="accordion-body px-3 py-5">
-                      <a
-                        href="#"
+                      <a download
+                        href="{% static 'documents/dogovor.docx' %}"
                         class="text-dark text-decoration-none d-flex gap-3 align-items-start mb-4"
                       >
                         <img src="{% static 'img/copy.svg' %}" alt="" />
                         <span>
-                          Схема увязки строк баланса и приложений к балансу
+                          Договор
+об осуществлении информационного обмена
+на передачу бухгалтерской и статистической отчетности в электронном виде
                         </span>
                       </a>
-                      <a
-                        href="#"
+                      <a download
+                        href="{% static 'documents/instr_minfin.doc.doc' %}"
                         class="text-dark text-decoration-none d-flex gap-3 align-items-start mb-4"
                       >
                         <img src="{% static 'img/copy.svg' %}" alt="" />
                         <span>
-                          Договор об информационном обмене
+                          Приказ
+от 13 сентября 2019 г. N 193
+об утверждении инструкции "о порядке заполнения типовых форм
+годовой и квартальной бухгалтерской отчетности"
+
                         </span>
                       </a>
-                      <a
-                        href="#"
-                        class="text-dark text-decoration-none d-flex gap-3 align-items-start"
+                      <a download
+                        href="{% static 'documents/v_ramkah.docx' %} "
+                        class="text-dark text-decoration-none d-flex gap-3 align-items-start mb-4"
                       >
                         <img src="{% static 'img/copy.svg' %}" alt="" />
                         <span>
-                          Инструкция Министерства финансов Республики Абхазия № 193 от 13-09-2019 г
+                          В рамках реализации государственной программы "социально-экономическое развитие республики абхазия на 2022-2025 годы
+                        </span>
+
+                      </a>
+                        <a download
+                        href="{% static 'documents/accountrules.docx' %} "
+                        class="text-dark text-decoration-none d-flex gap-3 align-items-start mb-4"
+                      >
+                        <img src="{% static 'img/copy.svg' %}" alt="" />
+                        <span>
+                                   Схема увязки строк баланса и приложений к балансу
+                        </span>
+                      </a>
+                        </a>
+                        <a download
+                        href="{% static 'documents/postonovlenie.pdf' %}"
+                        class="text-dark text-decoration-none d-flex gap-3 align-items-start mb-4"
+                      >
+                        <img src="{% static 'img/copy.svg' %}" alt="" />
+                        <span>
+                                   Постановление Об утверждении Порядка предоставления предприятиями, организациями и индивидуальными предпринимателями бухгалтерской (финансовой) и статистической отчетности в территориальные органы Государственного комитета
+Республики Абхазия по статистике
                         </span>
                       </a>
                     </div>
                   </div>
                 </div>
+
+
 
                 <div class="accordion-item border-0 mb-4">
                   <h2 class="accordion-header" id="flush-heading-2">
@@ -104,8 +171,8 @@
                     data-bs-parent="#accordionFlushExample"
                   >
                     <div class="accordion-body px-3 py-5">
-                      <a
-                        href="#"
+                      <a download
+                        href="{% static 'documents/xml.xml' %}"
                         class="text-dark text-decoration-none d-flex gap-3 align-items-start mb-4"
                       >
                         <img src="{% static 'img/copy.svg' %}" alt="" />
@@ -113,8 +180,8 @@
                           Транспортный файл XML
                         </span>
                       </a>
-                      <a
-                        href="#"
+                      <a download
+                        href="{% static 'documents/xmlguide.docx' %}"
                         class="text-dark text-decoration-none d-flex gap-3 align-items-start mb-4"
                       >
                         <img src="{% static 'img/copy.svg' %}" alt="" />
@@ -122,8 +189,8 @@
                           Описание формата XML
                         </span>
                       </a>
-                      <a
-                        href="#"
+                      <a download
+                        href="{% static 'documents/f_bal_1.xlsx' %}"
                         class="text-dark text-decoration-none d-flex gap-3 align-items-start"
                       >
                         <img src="{% static 'img/copy.svg' %}" alt="" />
@@ -134,6 +201,10 @@
                     </div>
                   </div>
                 </div>
+
+
+
+
 
 
         </div>
